@@ -1,0 +1,3 @@
+I thought of this solving this in 2 cases. If p and q are in the left, the LCA is left, if p and q are in the right
+the LCA is right. We go down nodes until these two cases are not satisfied anymore, meaning there is a split, p and q are in
+different trees, or the node we are on is either p or q and in that case it the LCA is the node that we are sitting on.
