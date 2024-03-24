@@ -1,0 +1,3 @@
+In order to invert tree, simply look at the swaps between nodes in the tree. For every node you must swap left and right
+so, our algoritihim will simply continue to swap all left and right nodes, then recursively call the left and right nodes, and 
+go down the tree
