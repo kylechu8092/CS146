@@ -1,0 +1,6 @@
+In order to solve this problem, I used the rules of bst to identify what type of condition each node must be.
+The validity of a bst is based on the value of the parent except for the root and it's place, left or right. The left
+node will always begin with an infinite lower bound, while it has to be less than the parent and the right node will
+always begin with an infinite upper bound, but will have to be greater than the parent. We can recursively iterate
+each node in a bst and check every single node if it follows the bounds, and every call will update the bounds depending
+on which node, left or right, we are checking and the value of the parent. 
