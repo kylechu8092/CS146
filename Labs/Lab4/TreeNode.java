@@ -21,9 +21,7 @@ public class TreeNode {
 
     }
 
-    //Collect the elements into the array, then rebuild using the array properties
-    //Looking at the tree, every right child and every left child is flipped
-    //Store into a temp while traversing down the tree
+
 
     public TreeNode invertTree(TreeNode root) {
         if (root == null)
