@@ -25,10 +25,6 @@ public class TreeNode {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        // Your code here
-        //push 7, push 15, pop all of this and store as list in this method
-        //push 20, push 9, pop all of it and store as list in this method, 
-        //push 3 and pop
         Queue<TreeNode> level = new LinkedList<>();
         List<List<Integer>> result = new ArrayList<>();
         if (root == null)
