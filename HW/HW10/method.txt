@@ -1,0 +1,3 @@
+Level order traversal is done using a queue attribute, first in first out. While we insert the elements in order, we 
+can pop the node and add its left and right child to the end of the queue. That way, we can visit all the nodes in order
+based on where the parents located.
