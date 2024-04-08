@@ -1,1 +1,6 @@
-
+My approach was storing values and indexes in key value pairs in a HashMap.
+We will iterate through the list of numbers, calculate the complement, which is target - nums[i]
+We would then check if the complement is a key in the hashmap, if not we will put the nums[i] and index into the hashmap
+We will use a hashmap because we can quickly grab a value and it's index. We will calculate the complement of the value
+we are iterating over and utilize the hashmap quick access to check if the complement exists in the hashmap, meaning 
+we have iterated over a complement and added it to the hashmap. 
