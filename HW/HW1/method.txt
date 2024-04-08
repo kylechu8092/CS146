@@ -1,0 +1,5 @@
+In order to sovle this, I thought to use two pointers. Once we remove all spaces, commas, etc, and lowercase
+we will use two pointers, one at the beginning and one at the end. The moment the two pointers don't have a value in 
+common we will return false. One trick to keep all the alpha numeric is the expression [^0-9a-zA-Z], which essentially
+will check whether or not a character is either 0-9,a-z,A-Z. The ^ is used as a negation symbol, so replacing all values 
+that are NOT 0-9,a-z,A-Z will be exactly what we want.
