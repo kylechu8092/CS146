@@ -1,0 +1,4 @@
+The most effective way to determine an anagram is to determine if they have a matching character set.
+To do this, we will make a helper method to convert a string into a hashmap with character as the key
+and the number of iterations each character has as its value. We will generate two of these hashmaps,
+which if they are anagrams of each other, should be equal. 
