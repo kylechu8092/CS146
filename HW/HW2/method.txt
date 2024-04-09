@@ -1,0 +1,4 @@
+This problem sounds like binary search, where we can determine bounds based on the value of the position.
+In this case, we are using the helper method to determine how to adjust our bounds, 
+if the method tells us that the middle is bad, we will have to adjust our right bound, if middle is good adjust left bound, and if the middle is bad
+and the middle-1 is good, then we have found the version we want to return.
