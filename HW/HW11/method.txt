@@ -1,0 +1,4 @@
+The approach to the problem is using dfs. In this case, we can use dfs with recursion and based on how we want to access each val.
+In the question, we want to access each node in 4 directions, so up, down, left and right. We recursively change the 
+values of the row and col to do this, checking the bounds and the conditions of the color we are accessing. We make sure
+that the each new pixel we access matches the starting color value and make sure the bounds are correct. 
