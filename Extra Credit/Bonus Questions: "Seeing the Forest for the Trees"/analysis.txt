@@ -1,0 +1,43 @@
+I researched some of the difference between Red black and AVL trees
+
+Red Black Strength and Weakness
+Faster insertion and deletion operations
+Ensures that the height is balanced
+Not as balanced as other self balancing trees
+
+Red black application:
+Used in linux scheduling
+Machine learning
+
+AVL Tree Strength and Weakness:
+Strict balancing implementations, thus, faster lookups
+Can easily predict performance because of strictness
+Slower insertion and deletion
+
+AVL Usage:
+Memory management systems
+Sets and dictionaries, used to index records of large Database
+
+
+B Tree Strength and Weakness:
+Can have multiple children per node, can store more data
+Large key values in a single node
+Complex to implement and utilizes more memory
+
+B Tree usage:
+Database management systems, SQL 
+Computer networks, encryption
+
+Red Black vs AVL
+What I found online was that AVL tree has a bigger strength in balancing
+and are implemented in a stricter way, balancing wise. Because of this, there are
+benefits in searching, but the insertion and deletion operations are more expensive
+because it requires more due to its stricter balancing. Thus, if we plan on using
+a lot of insertion, deletion operations, we should stick to red black trees and if 
+we need quick searching, we should implement AVL tree.
+
+Summary:
+Red black should be used if we do a lot of insertion/deletion 
+AVL Tree should be used if we need quick lookups
+B Tree should be used if we are trying to store lots of data
+

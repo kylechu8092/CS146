@@ -1,0 +1,45 @@
+There are various rules for red black trees that we must follow
+1. A node is either red or black
+2. The root and leaves are black
+3. If a node is red, then children are black
+4. All paths from a node to its leaves contain the same number of nodes
+
+Insertion:
+The strategy that we use is firstly, insert the node, color it red, then we must do some recoloring and rotations to
+follow the rules
+
+Special cases:
+Node is root:
+We color node as black
+
+Node uncle is red: 
+Recolor node parent and uncle to black, recolor the grandparent to red
+
+Node uncle is black:
+Rotate node parent opposite direction of node, so if node we want is on the left, we rotate parent right
+
+Node uncle is black and the sibling node is black
+Rotate node grandparent in the opposite direction, so node parent will become grandparent and the node we want inserted will 
+move to parents previous position, recolor original parent and grandparent
+
+Deletion:
+Summary of delete:
+    Cases: Left child is NIL, right child is NIL, neither is NIL
+    Call delete, transplant, then deleteFixup
+We need a transplant method to help move subtrees
+Deletion method
+Deletion fixup
+
+Transplant: 
+Can help us change the pointers of the node that we are deleting
+Essentially changing the deleted nodes childs and pointing them at parent
+
+deleteFixup:
+1. node sibling is red
+2. node sibling is black, sibling left and right child are black
+3. node sibling is black, sibling left is red and sibling right is black
+4. node sibling is black, sibling right is red
+
+
+Traversal
+Very simple for a BST, compare key and the node values to perform Traversal
