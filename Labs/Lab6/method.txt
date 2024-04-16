@@ -1,0 +1,11 @@
+The graph question is asking if a list of classes are able to complete. The criteria that shows if a schedule can't be completed
+is if the graph is cyclic. That means if course A requires course B to complete and course B requires course A to complete, this
+schedule can't be finished because the nodes are pointing to each other. There are a few ways to determine if the graph is cyclic. 
+I thought of doing topolgoical sort, but for dfs and bfs approach the moment that we enter a visited node, we can return false.
+I decided to implement this using kahns algorithim. The only catch is that I needed to convert the prereq list that was Given
+into an adjList. THis can be done by simply iterating through the entire given list, then for every sublist index would be a prereq
+and we would access the prereq then, add the course into the prereq sublist
+Implementing Kahns is simple, iterate through adjList to find indegree of 0. For all the 0 indegrees we add them into queue
+and perform a bfs on the queue. Except for every neihgbor we enter, we decrease the indegree and only add indegree of 0 into the q.
+This will access all the nodes. At the very end, if we encounter a final list larger than number of courses, then we have encountered
+a cycle, meaning that we can't complete courses
