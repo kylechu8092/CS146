@@ -1,0 +1,41 @@
+Can we use heaps as priority queues? How so? Write an explanation, with the help of pseudocode/diagrams to support your explanation.
+Yes, we can use heaps as priority queues. We can essentially implement a heap using an array, which could act as a 
+priority queue. The main property of a heap that can allow it to be a priority queue is the heapify, which maintains
+the priority property whenever we want to insert a value. 
+Pseudocode for min heap: 
+heapify(key)
+int leftChild = left(key) //Assume we have a helper function that gives us the left and right child of an index key
+int rightChild = right(key) 
+int smallest = key //Key should be smallest but if not, we can check and change
+
+if (key < heap.length && leftChild < key)
+smallest = leftChild
+if (ley < heap.length && rightChild < key)
+smallest = rightChild
+
+if (key != smallest) //We have to make a swap
+swap(key, smallest)
+heapify(smallest)
+
+The pseudocode to implement heapify shows that every time we change elements in a heap, via add or delete, we will always
+maintain the minHeap property, which is why we can use a heap as a priority queue. In this case, the priority queue will always
+keep the lowest value element at the first index of an array. 
+
+Given a max heap, is there a way to use the max heap as a min heap, without writing a whole min heap implementation? 
+Is the opposite also true? Justify your answer with pseudocode, and/or python OR java code, and explain your answer.  
+We can use it both ways. We can build a maxHeap using a minHeap, but there must be some additional methods. When we want 
+to rebuild the minHeap into a maxHeap, we would have to add another heapify method for the opposing type of heap, which 
+would be the same logic as the code above. We would iterate through the entire heap starting at the last parent to do so.
+Let's say have implemented a maxHeap and want to use it as a min heap. 
+The heap looks like [10, 8, 7, 2, 4]
+Starting at the last parent, using the formula (heap.length - 2)/2, we can begin at the last parent's index. We access
+node 8, because (5-2)/2 = 1. Call the minHeapify method, written above, which will esentially grab whichever child is smallest
+and swap it with 8. We will have a heap that looks like [10, 2, 7, 8, 4]. The recursive call will then compare 2 left
+and right child, but nothing will happen, because 2's new left and right child maintain the min heap property. 
+We will iterate once more, now starting i--, which would be at the root. At the root, we will call the same function, which will commit
+a swap between 2 and 10. Now the recursive call will check the swapped position of the heap, which is now where 10 is located. 10 will 
+be compared to its left and right child, swapping with 4. 
+At the end, heap will be [2,4,7,8,10]. 
+This shows that by implementing the minHeapify method, we can convert a given array of a maxHeap into a minHeap. The only
+method we need to add is the minHeapify and the same could be done if we were given a minHeap and we wanted to convert it into
+a maxHeap. We would do the exact same, the only difference is that the swaps we would be based on the greater child value. 
