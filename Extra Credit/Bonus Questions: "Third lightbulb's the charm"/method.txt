@@ -1,0 +1,5 @@
+The method to do this in O(n) is using a for loop, not recursively.
+The sequence can be determined by the rule that its nth value is calculated by n-1 + n-2
+We can do it O(n) by keeping track of the previous values. We first calculate the val by adding left and right
+which are the two pointers tailing behind. Then we update the two pointers, the left is now right, and the right is now val.
+We will keep adding until i reaches n and return val. 
