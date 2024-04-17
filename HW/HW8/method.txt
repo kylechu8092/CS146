@@ -1,0 +1,11 @@
+A palindrome can be created based on a string if there is an even count of character. Only one character can have an odd count 
+in the palindrome. Since this problem needs to count the number of chars we see, we can think of a way to implement 
+counting sort that updates the counts of a character every time we iterate through the string. 
+To determine the length of the palindrome, we can iterate through the count list we created. We will add 
+to our result += count / 2 * 2, which will sum the count of chars, example if aaaa, then count of a is 4, 4/2 * 2 = 4,
+which is the length we are looking for. A trick is that we don't care about order, we simply care about the number of
+characters that appear in the string, nothing else. After we add it we also need to check, if we are at an even total,
+but the count we are iterating on is odd, we must add 1. This is due to the fact that palindromes can be made with 1 odd character.
+aaabbbaaa. The count of B is odd but we must add an extra 1 to our result length. 
+Another question is what if there are multiple odds in a given string, well it doesn't matter, because 
+abababa, can be formed. This accounts for the edge cases. 
