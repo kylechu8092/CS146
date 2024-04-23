@@ -1,0 +1,17 @@
+This question is an MST question and can be done using kruskals algorithm. I chose this one because I wanted
+to learn more about it but it can also be done using prims. There are a few key components of this problem that 
+we would have to understand first before implenting kruskals algorithm. Firstly, we can define all wells as a single,
+virtual node, where all houses will connect to that node. Secondly, we must build an edgelist because there isn't 
+a graph implemented in the question. Using kruskals algorithm will allow us to use a disjoint set, which in this question,
+we are creating disjoint sets and trying to unify all of them in order to build the MST. The disjoint set data structure
+will allow us to also check if we are going into a visited node and if we aren't on a visited node we can add it to the set.
+
+Firstly, build an edge class that can be used to create the edgeList. We will add parameters of src, dest, weight. implemente
+the comparable interface because it will be easier to use the built in sorting algorithm than to create one ourselves.
+We are going to iterate through wells and pipes to create a list of all known edges, sort them and begin entering the cheapest ones.
+We will start from the beginning, and check if the src and dest are in the disjoint set, using a root method. This method will
+essentially check if the src and dest are in the set, and if they are, we are going to continue because it means that they 
+have been connected. If they aren't connected, we are going to connect them via unify method. This method is essentially creating
+a smaller disjoint set, and connecting it to the main one, which is where our mst is held. Finally we are going to decrement the n, as we have completed
+a house and check if n == 0. This is because there can be much more edges than houses, and we shouldn't look at more expensive edges
+when we have already found our MST. Also remember to add edgeweight and return it at the end. 
