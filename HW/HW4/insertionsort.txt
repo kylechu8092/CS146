@@ -1,0 +1,28 @@
+Insertion sort is an inplace sorting algoritihim
+int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+Given this code snippit we can analyze the algoritihim
+Firstly, we will ignore constants and highlight the lines of code that will contribute to time
+for (int i = 1; i < n; ++i) O(n) because it will iterate through the entire n length
+while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+This next part is an important part of the code. Although it is because it is a while loop, we understand
+that insertion sort will esentially insert the values into the right place. Knowing this, the code purpose is to
+find where each key should be placed, and will iterate down until the key is put into the right place. In the best case,
+we will never have to execute the while loop because the key is already in the right place and the for loop above will execute,
+but in the worst and avg case we will have to execute the while loop O(n) times.
+
+Summary:
+Best Theta(n), Worst Theta(n^2), Avg O(n^2)
+
+

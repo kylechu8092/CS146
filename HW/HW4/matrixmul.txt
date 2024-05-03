@@ -1,0 +1,25 @@
+MATRIX_MULTIPLY(A, B): 
+  if columns(A) ≠ rows(B): 
+    raise ValueError("Matrix multiplication is not defined.") 
+
+  rows_A ← number of rows in A 
+  cols_A ← number of columns in A 
+  cols_B ← number of columns in B 
+  result ← matrix of size rows_A x cols_B filled with zeros 
+
+  for i from 1 to rows_A do: 
+    for j from 1 to cols_B do: 
+    sum ← 0  
+      for k from 1 to cols_A do: 
+        sum ← sum + A[i][k] * B[k][j] 
+      result[i][j] ← sum return result
+
+The first lines of code are constants
+We can look at the first for loop
+  for i from 1 to rows_A do: N+1
+      for j from 1 to cols_B do: N(N+1)
+        for k from 1 to cols_A do: N^2(N+1)
+
+We will find that the f(n) = n^2(n+1) = O(n^3) = Omega(n^3) = Theta(n^3)
+
+
