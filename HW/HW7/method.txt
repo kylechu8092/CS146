@@ -1,0 +1,7 @@
+Queston has intervals. We can interpret these intervals as start and end points. We will update our server count depending on
+what is happening during these intervals. Lets say for the test case, meeting 0 to 30. Theres another meeting that
+is going to happen in 5 to 10. We can sort both start and ending intervals into 2 arrays. First we are going to check
+if start[0] < end[0]. We can see that the 0 < 10, so we will increase our server count. We are essentially, looking at 
+every point in time to see if a server is needed. Since we finished at 0, we are going to check again at the 
+next starting time which is at 5. We again, are going to be needing another server because the at start time 5, 2 meetings 
+will be going on at the same time.
