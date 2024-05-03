@@ -1,0 +1,12 @@
+I previously used a HashMap on twoSum, but I feel like a HashMap is slightly more complicated than doing
+it through two pointers. The logic behind threeSum is that for every value in the given array, there should be a 
+other values in the array that add up to 0. One task that will help us in doing this via pointers is by initially sorting
+the given array. That way, we know how to update our pointers depending on the sum we calculate every iteration. 
+For given nums[i], we are going to initialize the two pointers, one at i+1 and one at nums.length-1. These two pointers
+will check if they add up to 0, if the sum that was calculated is greater than 0, we know that the right pointer needs to be adjusted
+because it is adding too large of a value. We decrement that pointer, if the sum is too small we decrement the left pointer.
+Some hidden cases include that once we find that the sum is 0, we only change one pointer, which could be left. We then adjust that 
+pointer until it lands upon a number that isn't a duplicate itself. Another case is that before we iterate through the pointers,
+we need to check if we are on duplicate values, meaning nums[i] == nums[i-1], and if this is the case, we continue. This is to ensure that
+we don't add duplicate sets of 3 sum, because if there is a list of [2,2,2,2....], we will have to go through every 2 for no reason.
+Essentially, for every unique value in the array, there lies a unique set of values that when added = to 0. 
